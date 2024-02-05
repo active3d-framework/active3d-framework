@@ -43,6 +43,7 @@
     <script src="static/js/bulma-carousel.min.js"></script>
     <script src="static/js/bulma-slider.min.js"></script>
     <script src="static/js/index.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
 
@@ -52,7 +53,8 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered">
                 <div class="column has-text-centered">
-                    <h1 class="title is-4 publication-title">Active3D - An Active Learning Framework for Multi-Modal 3D Object Detection </h1>
+                    <h1 class="title is-4 publication-title">ActiveAnno3D - An Active Learning Framework for Multi-Modal 3D
+                        Object Detection </h1>
                     <!-- <div class="is-size-5 publication-authors">
                       Paper authors
                       <span class="author-block">
@@ -117,7 +119,7 @@
                             <!-- ArXiv abstract Link -->
                             <span class="link-block">
                               <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                              class="external-link button is-normal is-rounded is-dark">
+                                 class="external-link button is-normal is-rounded is-dark">
                               <span class="icon">
                                 <i class="ai ai-arxiv"></i>
                               </span>
@@ -151,13 +153,21 @@
             <div class="column is-four-fifths">
                 <h2 class="title is-3">Overview</h2>
                 <div class="content">
-                    <strong>Active3D</strong> is the first active learning framework for multi-modal 3D object detection. With this framework you can select data samples for labeling that are of maximum informativeness for training.<br><br>
+                    <strong>ActiveAnno3D</strong> is the first active learning framework for multi-modal 3D object
+                    detection. With this framework you can select data samples for labeling that are of maximum
+                    informativeness for training.<br><br>
                     In summary:
                     <ul>
-                        <li> We explore various continuous training methods and integrate the most efficient method regarding computational demand and detection performance.</li>
-                        <li> We perform extensive experiments and ablation studies with BEVFusion and PV-RCNN on the nuScenes and TUM Traffic Intersection datasets and show that we can achieve almost the same performance when using only half of the data
-                            (79.65 mAP compared to 83.50 mAP).</li>
-                        <li> We integrate our active learning framework into the proAnno labeling tool to enable AI-assisted data selection and labeling and minimize the labeling costs.</li>
+                        <li> We explore various continuous training methods and integrate the most efficient method
+                            regarding computational demand and detection performance.
+                        </li>
+                        <li> We perform extensive experiments and ablation studies with <strong>BEVFusion</strong> and <strong>PV-RCNN</strong> on the
+                            <strong>nuScenes</strong> and <strong>TUM Traffic Intersection</strong> datasets and show that we can achieve almost the same
+                            performance when using only half of the data (<strong>79.65 mAP</strong> compared to <strong>83.50 mAP</strong>).
+                        </li>
+                        <li> We integrate our active learning framework into the <strong>proAnno</strong> labeling tool to enable
+                            AI-assisted data selection and labeling and minimize the labeling costs.
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -173,23 +183,29 @@
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        The curation of large-scale datasets still is costly
-                        and requires a lot of time and resources. Data is often manually
+                        The curation of large-scale datasets is still costly
+                        and requires much time and resources. Data is often manually
                         labeled, and the challenge of creating high-quality datasets
-                        remains. In this work, we propose Active3D, an active learning
-                        framework to select data samples for labeling that are of maximum
-                        informativeness for training. We explore various continuous
-                        training methods and integrate the most efficient method
-                        regarding computational demand and detection performance.
-                        Furthermore, we perform extensive experiments and ablation
-                        studies with BEVFusion and PV-RCNN on the nuScenes and
-                        TUM Traffic Intersection datasets and show that we can achieve
-                        almost the same performance when using only half of the data
-                        (79.65 mAP compared to 83.50 mAP). We integrate our active
-                        learning framework into the proAnno labeling tool to enable AI-assisted
-                        data selection and labeling and minimize the labeling
-                        costs. Finally, we provide code, weights, and visualization results
-                        on our website: https://active3d.github.io/.
+                        remains. In this work, we fill the research gap using active
+                        learning for multi-modal 3D object detection. We propose
+                        ActiveAnno3D, an active learning framework to select data
+                        samples for labeling that are of maximum informativeness for
+                        training. We explore various continuous training methods and
+                        integrate the most efficient method regarding computational
+                        demand and detection performance. Furthermore, we perform
+                        extensive experiments and ablation studies with BEVFusion
+                        and PV-RCNN on the nuScenes and TUM Traffic Intersection
+                        dataset. We show that we can achieve almost the same perfor
+                        mance with PV-RCNN and the entropy-based query strategy
+                        when using only half of the training data (77.25 mAP com
+                        pared to 83.50 mAP) of the TUM Traffic Intersection dataset.
+                        BEVFusion achieved an mAP of 64.31 when using half of the
+                        training data and 75.0 mAP when using the complete nuScenes
+                        dataset. We integrate our active learning framework into the
+                        proAnno labeling tool to enable AI-assisted data selection and
+                        labeling and minimize the labeling costs. Finally, we provide
+                        code, weights, and visualization results on our website: https:
+                        //active3d-framework.github.io/active3d-framework.
                     </p>
                 </div>
             </div>
@@ -208,19 +224,57 @@
     </div>
 </section>
 
+<!-- Results  -->
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Evaluation</h2>
+        <div class="item">
+            <!-- include an html plot below -->
+            <iframe src="static/html/interactive_plot_bevfusion.html" width="1000px" height="500px"
+                    frameborder="0"></iframe>
+            <h5 class="is-3 has-text-centered">BEVFusion on nuScenes dataset</h5>
+        </div>
+    </div>
+</section>
 
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="item">
+            <!-- include an html plot below -->
+            <iframe src="static/html/interactive_plot_pvrcnn.html" width="1000px" height="500px"
+                    frameborder="0"></iframe>
+        </div>
+        <h5 class="is-3 has-text-centered">PV-RCNN on TUM Traffic Intersection dataset</h5>
+    </div>
+</section>
 
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="item">
+            <img src="static/images/all_acquisition_functions_updated.jpg" alt="title_figure"/>
+        </div>
+        <h5 class="is-3 has-text-centered">The graph illustrates the mAP scores achieved by the PV-RCNN model on the TUM Traffic Intersection dataset relative to the expanding size of the training set in the active learning setting with different query strategies.</h5>
+    </div>
+</section>
+
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="item">
+            <img src="static/images/qualitative_results" alt="title_figure"/>
+        </div>
+        <h5 class="is-3 has-text-centered">Qualitative results are illustrated by two pairs of images. The left pair is from the TUM Traffic Intersection dataset, and the right pair is from nuScenes. For each pair, the left image shows the predicted labels for each class, with each class represented by a different color. The right image of each pair shows the predictions made by learning on the complete dataset. Both results are quite similar, showing the efficiency of the active learning technique.</h5>
+    </div>
+</section>
 
 <section class="hero">
     <div class="hero">
         <div class="container is-centered">
-            <h2 class="title is-3 has-text-centered">Evaluation</h2>
             <table class="table is-centered">
                 <thead>
                 <tr>
                     <th colspan="2">Labeled Pool</th>
-                    <th colspan="2">LiDAR-Only</th>
-                    <th colspan="2">LiDAR+Camera</th>
+                    <th colspan="2">LiDAR-Only (PV-RCNN)</th>
+                    <th colspan="2">LiDAR+Camera (BEVFusion)</th>
                 </tr>
                 <tr>
                     <th>Round</th>
@@ -268,8 +322,8 @@
                     <td>5</td>
                     <td>30</td>
                     <td>77.25</td>
-                    <td>76.56</td>
-                    <td>44.94</td>
+                    <td><u>76.56</u></td>
+                    <td><strong>44.94</strong></td>
                     <td>45.57</td>
                 </tr>
                 <tr>
@@ -277,37 +331,37 @@
                     <td>35</td>
                     <td>75.40</td>
                     <td>75.00</td>
-                    <td>44.74</td>
+                    <td><u>44.74</u></td>
                     <td>46.76</td>
                 </tr>
                 <tr>
                     <td>7</td>
                     <td>40</td>
-                    <td>77.03</td>
+                    <td><u>77.03</u></td>
                     <td>75.48</td>
                     <td>-</td>
-                    <td>49.24</td>
+                    <td><u>49.24</u></td>
                 </tr>
                 <tr>
                     <td>8</td>
                     <td>50</td>
-                    <td>79.09</td>
-                    <td>77.25</td>
+                    <td><strong>79.09</strong></td>
+                    <td><strong>77.25</strong></td>
                     <td>-</td>
-                    <td>64.31</td>
+                    <td><strong>64.31</strong></td>
                 </tr>
                 <tr>
                     <td>SOA</td>
                     <td><strong>100</strong></td>
-                    <td><strong>83.50</strong></td>
-                    <td>-</td>
-                    <td>75.00</td>
-                    <td>-</td>
+                    <td colspan="2"><strong>83.50</strong></td>
+                    <td colspan="2"><strong>75.00</strong></td>
                 </tr>
                 </tbody>
             </table>
             <h2 class="subtitle has-text-centered">
-                Evaluation of the PV-RCNN (LiDAR-only) and BEVFusion (camera+LiDAR) model using the random sampling baseline and entropy querying method on the TUM Traffic Intersection dataset and the nuScenes dataset. These Results are compaired to the respective 100% accuracies of the original work.
+                Evaluation of the PV-RCNN (LiDAR-only) and BEVFusion (camera+LiDAR) model using the random sampling
+                baseline and entropy querying method on the TUM Traffic Intersection dataset and the nuScenes dataset.
+                These Results are compaired to the respective 100% accuracies of the original work.
             </h2>
         </div>
     </div>
