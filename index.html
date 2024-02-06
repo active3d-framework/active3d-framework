@@ -118,7 +118,7 @@
 
                             <!-- ArXiv abstract Link -->
                             <span class="link-block">
-                              <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                              <a href="https://arxiv.org/pdf/2402.03235.pdf" target="_blank"
                                  class="external-link button is-normal is-rounded is-dark">
                               <span class="icon">
                                 <i class="ai ai-arxiv"></i>
@@ -136,10 +136,15 @@
 
 <!-- title figure -->
 <section class="hero teaser">
-    <div class="container is-max-desktop">
+    <div class="container is-8">
         <div class="hero-body">
             <div class="item">
                 <img src="static/images/title_figure.jpg" alt="title_figure"/>
+                <h5>We propose a framework for efficient active learning within various 3D object detection techniques and modalities,
+                    demonstrating the effectiveness of active learning at reaching comparable detection performance on benchmark datasets at a
+                    fraction of the annotation cost. Datasets include roadside infrastructure sensors (top row) and onboard vehicle sensors (bottom
+                    row), with LiDAR-only and LiDAR+camera fusion methods, the two dominant strategies in state-of-the-art performance at
+                    the safety-critical detection task.</h5>
             </div>
         </div>
     </div>
@@ -213,26 +218,39 @@
     </div>
 </section>
 
+
+<!--<section class="section hero is-light">-->
+<!--    <div class="container is-max-desktop">-->
+<!--        <div class="columns">-->
+<!--            <div class="column is-four-fifths">-->
+
 <!-- Architecture  -->
-<section class="hero teaser">
-    <div class="container is-max-desktop">
+<section class="section hero teaser">
+    <div class="container is-8">
+        <h2 class="title is-3 has-text-centered">Architecture</h2>
         <div class="hero-body">
             <div class="item">
                 <img src="static/images/architecture.jpg" alt="title_figure"/>
+                <h5 class="is-3 has-text-centered">The generalized active learning flow involves the selection of data from an unlabeled pool according to an acquisition
+                    function, which, in the case of uncertainty-driven AL, utilizes the trained model or, in the case of diversity-driven AL, may
+                    be independent of the training. This selected data is then annotated by an oracle and aggregated with previously labeled
+                    data. Whether or not all data or just the new data is used in the next training step is determined by the choice of training
+                    strategy. The variety of possible acquisition and training techniques and unique domain challenges posed by autonomous
+                    driving make active learning an opportune environment for innovation toward safe and accurate learning.</h5>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Results  -->
-<section class="hero teaser">
+<section class="section hero teaser">
     <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Evaluation</h2>
         <div class="item">
             <!-- include an html plot below -->
             <iframe src="static/html/interactive_plot_bevfusion.html" width="1000px" height="500px"
                     frameborder="0"></iframe>
-            <h5 class="is-3 has-text-centered">BEVFusion on nuScenes dataset</h5>
+            <h5 class="is-3 has-text-centered">The graph illustrates the mAP score achieved by the BEVFusion model on the nuScenes dataset relative to the expanding size of the training set in the active learning setting with random and entropy queries separately.</h5>
         </div>
     </div>
 </section>
@@ -244,7 +262,7 @@
             <iframe src="static/html/interactive_plot_pvrcnn.html" width="1000px" height="500px"
                     frameborder="0"></iframe>
         </div>
-        <h5 class="is-3 has-text-centered">PV-RCNN on TUM Traffic Intersection dataset</h5>
+        <h5 class="is-3 has-text-centered">The graph illustrates the mAP scores achieved by the PV-RCNN model on the TUM Traffic Intersection dataset relative to the expanding size of the training set in the active learning setting with random and entropy queries separately.</h5>
     </div>
 </section>
 
@@ -257,8 +275,9 @@
     </div>
 </section>
 
-<section class="hero teaser">
-    <div class="container is-max-desktop">
+<section class="section hero teaser">
+    <div class="container is-8">
+        <h3 class="title is-3 has-text-centered">Qualitative Results</h3>
         <div class="item">
             <img src="static/images/qualitative_results.png" alt="title_figure"/>
         </div>
@@ -268,8 +287,9 @@
 
 <section class="hero">
     <div class="hero">
+        <h3 class="title is-8 has-text-centered">Benchmark Results</h3>
         <div class="container is-centered">
-            <table class="table is-centered">
+            <table class="table is-centered center">
                 <thead>
                 <tr>
                     <th colspan="2">Labeled Pool</th>
@@ -290,55 +310,55 @@
                     <td>1</td>
                     <td>10</td>
                     <td>51.03</td>
-                    <td>54.32</td>
+                    <td>54.32 <p style="display:inline;color:red;font-size:80%;">(+3.29)</p></td>
                     <td>30.95</td>
-                    <td>31.06</td>
+                    <td>31.06 <p style="display:inline;color:forestgreen;font-size:80%;">(+0.11)</p></td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>15</td>
                     <td>61.98</td>
-                    <td>62.24</td>
+                    <td>62.24 <p style="display:inline;color:forestgreen;font-size:80%;">(+0.26)</p></td>
                     <td>34.19</td>
-                    <td>36.39</td>
+                    <td>36.39 <p style="display:inline;color:forestgreen;font-size:80%;">(+2.20)</p></td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>20</td>
                     <td>69.84</td>
-                    <td>68.23</td>
+                    <td>68.23 <p style="display:inline;color:red;font-size:80%;">(-1.61)</p></td>
                     <td>38.00</td>
-                    <td>40.41</td>
+                    <td>40.41 <p style="display:inline;color:forestgreen;font-size:80%;">(+2.41)</p></td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>25</td>
                     <td>74.82</td>
-                    <td>72.40</td>
+                    <td>72.40 <p style="display:inline;color:red;font-size:80%;">(-2.42)</p></td>
                     <td>42.36</td>
-                    <td>42.17</td>
+                    <td>42.17 <p style="display:inline;color:red;font-size:80%;">(-0.19)</p></td>
                 </tr>
                 <tr>
                     <td>5</td>
                     <td>30</td>
                     <td>77.25</td>
-                    <td><u>76.56</u></td>
+                    <td><u>76.56</u> <p style="display:inline;color:red;font-size:80%;">(-0.69)</p></td>
                     <td><strong>44.94</strong></td>
-                    <td>45.57</td>
+                    <td>45.57 <p style="display:inline;color:forestgreen;font-size:80%;">(+0.63)</p></td>
                 </tr>
                 <tr>
                     <td>6</td>
                     <td>35</td>
                     <td>75.40</td>
-                    <td>75.00</td>
+                    <td>75.00 <p style="display:inline;color:red;font-size:80%;">(-0.40)</p></td>
                     <td><u>44.74</u></td>
-                    <td>46.76</td>
+                    <td>46.76 <p style="display:inline;color:forestgreen;font-size:80%;">(+2.02)</p></td>
                 </tr>
                 <tr>
                     <td>7</td>
                     <td>40</td>
                     <td><u>77.03</u></td>
-                    <td>75.48</td>
+                    <td>75.48 <p style="display:inline;color:red;font-size:80%;">(-1.55)</p></td>
                     <td>-</td>
                     <td><u>49.24</u></td>
                 </tr>
@@ -346,23 +366,23 @@
                     <td>8</td>
                     <td>50</td>
                     <td><strong>79.09</strong></td>
-                    <td><strong>77.25</strong></td>
+                    <td><strong>77.25</strong> <p style="display:inline;color:red;font-size:80%;">(-1.84)</p></td>
                     <td>-</td>
                     <td><strong>64.31</strong></td>
                 </tr>
-                <tr>
-                    <td>SOA</td>
+                <tr bgcolor="lightgray">
+                    <td><strong>SOA (No AL)</strong></td>
                     <td><strong>100</strong></td>
-                    <td colspan="2"><strong>83.50</strong></td>
-                    <td colspan="2"><strong>75.00</strong></td>
+                    <td colspan="2" style="text-align: center"><strong>83.50</strong></td>
+                    <td colspan="2" style="text-align: center"><strong>75.00</strong></td>
                 </tr>
                 </tbody>
             </table>
-            <h2 class="subtitle has-text-centered">
+            <h5 class="is-3 has-text-centered">
                 Evaluation of the PV-RCNN (LiDAR-only) and BEVFusion (camera+LiDAR) model using the random sampling
                 baseline and entropy querying method on the TUM Traffic Intersection dataset and the nuScenes dataset.
                 These Results are compaired to the respective 100% accuracies of the original work.
-            </h2>
+            </h5>
         </div>
     </div>
 </section>
